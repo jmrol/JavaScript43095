@@ -1,0 +1,22 @@
+/*Estilos Globales*/
+
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--general_background-color);
+}
+
+ul {
+    list-style-type: none;
+}

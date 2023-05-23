@@ -1,0 +1,17 @@
+/*pagina home*/
+
+.grilla__home {
+	display: grid;
+	grid-template-areas:
+		"cabecera cabecera cabecera"
+		"menusticky menusticky menusticky"
+		"carrousel carrousel carrousel"
+		"mosaic mosaic mosaic"
+	;
+	grid-template-rows: 50px  110px 600px 1200px;
+	grid-template-columns: 1fr 1fr 1fr;
+	height: 100vh;
+	row-gap: 10px;
+	column-gap: 10px;
+}
+

@@ -1,0 +1,81 @@
+.mosaic {
+    grid-area: mosaic;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-areas:
+        "mosaic1 mosaic1 mosaic1 mosaic1 mosaic2 mosaic2 mosaic2 mosaic2 mosaic4 mosaic4 mosaic4 mosaic4"
+        "mosaic1 mosaic1 mosaic1 mosaic1 mosaic3 mosaic3 mosaic3 mosaic3 mosaic4 mosaic4 mosaic4 mosaic4"
+        "mosaic5 mosaic5 mosaic5 mosaic5 mosaic5 mosaic5 mosaic6 mosaic6 mosaic6 mosaic6 mosaic6 mosaic6"
+        "mosaic7 mosaic7 mosaic7 mosaic7 mosaic7 mosaic7 mosaic8 mosaic8 mosaic8 mosaic9 mosaic9 mosaic9";
+    grid-template-rows: 400px 400px 1000px 800px;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.mosaic .mosaic1,
+.mosaic2,
+.mosaic3,
+.mosaic4,
+.mosaic5,
+.mosaic6,
+.mosaic7,
+.mosaic8,
+.mosaic9 {
+    background-color: darkgreen;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mosaic .mosaic1 {
+    grid-area: mosaic1;
+    background-image: url(/assets/img/flame_sculpture_560x900.jpg);
+
+}
+
+.mosaic .mosaic2 {
+    grid-area: mosaic2;
+    background-image: url(/assets/img/firepit_hotham_605X455_452017d7-5b80-4f46-8464-ed6c3076566a_605x455.jpg);
+}
+
+.mosaic .mosaic3 {
+    grid-area: mosaic3;
+    background-image: url(/assets/img/Vert-Garden-HP_605x455.jpg);
+}
+
+.mosaic .mosaic4 {
+    grid-area: mosaic4;
+    background-image: url(/assets/img/Entanglements_0009_1350x2026.jpg);
+}
+
+.mosaic .mosaic5 {
+    grid-area: mosaic5;
+    background-image: url(/assets/img/dr-arora---toorak---the-murray---rust---led-strip-lighting---wall-art_384x577.jpg);
+}
+
+.mosaic .mosaic6 {
+    grid-area: mosaic6;
+    background-image: url(/assets/img/Wall_Decor_HP_908x1000.jpg);
+}
+
+.mosaic .mosaic7 {
+    grid-area: mosaic7;
+    background-image: url(/assets/img/Furn_Pergolas_HP_900x560.jpg);
+}
+
+.mosaic .mosaic8 {
+    grid-area: mosaic8;
+    background-image: url(/assets/img/MG_0089_885x1200.jpg);
+}
+
+.mosaic .mosaic9 {
+    grid-area: mosaic9;
+    background-image: url(/assets/img/Kuru_Gate_570x920.jpg);
+}

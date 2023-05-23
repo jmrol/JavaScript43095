@@ -1,0 +1,18 @@
+.grilla__shop {
+	display: grid;
+	grid-template-areas:
+		"cabecera cabecera cabecera"
+		"menusticky menusticky menusticky"
+		"cards cards cards"
+		"footer footer footer"
+	;
+	grid-template-rows: 50px  110px auto 400px ;
+	grid-template-columns: 1fr 1fr 1fr;
+	height: 100vh;
+	row-gap: 10px;
+	column-gap: 10px;
+}
+
+.cantidad-carrito{
+	display: none;
+}

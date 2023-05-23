@@ -1,0 +1,80 @@
+.carrousel {
+    grid-area: carrousel;
+    margin-left: 40px;
+    margin-right: 40px;
+    overflow: hidden;
+}
+
+.carrousel .grande {
+    width: 300%;
+    display: grid;
+    grid-template-areas:
+        "cr1 cr2 cr3";
+    grid-template-rows: 600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    align-items: center;
+    transition: all .5s ease;
+    transform: translateX(0%);
+}
+
+.carrousel .puntos {
+    position: relative;
+    top: -50px;
+    width: 100%;
+    margin: 1em 0 0;
+    padding: .4em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel .punto {
+    width: 2em;
+    height: 2em;
+    margin: 1em 1em 0;
+    background-color: rgb(235, 137, 10)
+}
+
+.carrousel .punto.activo {
+    background-color: rgb(4, 22, 28);
+}
+
+.carrousel .cr1,
+.cr2,
+.cr3 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    color: aqua;
+}
+
+.carrousel .cr1 {
+    grid-area: cr1;
+    background-image: url("/assets/img/ent_hotham-5_948x948_crop_center.jpg");
+}
+
+.carrousel .cr2 {
+    grid-area: cr2;
+    background-image: url("/assets/img/firepit_hotham_605X455_452017d7-5b80-4f46-8464-ed6c3076566a_605x455.jpg");
+}
+
+.carrousel .cr3 {
+    grid-area: cr3;
+    background-image: url("/assets/img/Furn_Pergolas_HP_900x560.jpg");
+}
+
+.carrousel .grande .cr1 .cr1le,
+.cr2le,
+.cr3le {
+    background-color: rgb(63, 62, 61);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

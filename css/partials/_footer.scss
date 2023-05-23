@@ -1,0 +1,16 @@
+.footer{
+	grid-area: footer;
+    display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+	 align-items: center;
+	 justify-content: space-around;
+height: 300px;
+	background-color: rgb(255, 170, 0);
+	// font-family: var(--font-principal);
+	// font-weight: bold;
+	// font-size: var(--text-base);
+	// padding-left: 200px;
+	// padding-right: 200px;
+	// z-index: 980;
+}
