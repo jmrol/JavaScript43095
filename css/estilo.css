@@ -403,8 +403,8 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  height: 300px;
-  background-color: rgb(255, 170, 0);
+  height: auto;
+  background-color: var(--primary);
 }
 
 .grilla__carrito {
