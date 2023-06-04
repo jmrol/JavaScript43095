@@ -174,8 +174,8 @@ ul {
 /*pagina home*/
 .grilla__home {
   display: grid;
-  grid-template-areas: "cabecera cabecera cabecera" "menusticky menusticky menusticky" "carrousel carrousel carrousel" "mosaic mosaic mosaic";
-  grid-template-rows: 50px 110px 600px 1200px;
+  grid-template-areas: "cabecera cabecera cabecera" "menusticky menusticky menusticky" "carrousel carrousel carrousel" "mosaic mosaic mosaic" "footer footer footer";
+  grid-template-rows: 50px 110px 600px 1200px 300px;
   grid-template-columns: 1fr 1fr 1fr;
   height: 100vh;
   row-gap: 10px;
@@ -344,7 +344,7 @@ ul {
 .grilla__shop {
   display: grid;
   grid-template-areas: "cabecera cabecera cabecera" "menusticky menusticky menusticky" "cards cards cards" "footer footer footer";
-  grid-template-rows: 50px 110px auto 400px;
+  grid-template-rows: 50px 110px auto 300px;
   grid-template-columns: 1fr 1fr 1fr;
   height: 100vh;
   row-gap: 10px;
@@ -364,6 +364,8 @@ ul {
   align-items: center;
   justify-content: space-around;
   background-color: none;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .card-body {
@@ -380,10 +382,9 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 380px;
+  width: 390px;
   height: 80%;
   padding: 10px;
-  background-color: rgb(255, 0, 183);
   background-color: none;
 }
 
@@ -392,7 +393,7 @@ ul {
   justify-content: center;
   margin: 10px;
   width: 100%;
-  height: 400px;
+  height: 380px;
   align-items: center;
   background-color: none;
   overflow: hidden;
@@ -434,7 +435,7 @@ ul {
 .grilla__carrito {
   display: grid;
   grid-template-areas: "cabecera cabecera cabecera" "menusticky menusticky menusticky" "carro carro carro" "footer footer footer";
-  grid-template-rows: 50px 110px auto 400px;
+  grid-template-rows: 50px 110px auto 300px;
   grid-template-columns: 1fr 1fr 1fr;
   height: 100vh;
   row-gap: 10px;
