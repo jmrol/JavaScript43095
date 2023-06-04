@@ -238,17 +238,17 @@ ul {
 
 .carrousel .cr1 {
   grid-area: cr1;
-  background-image: url("/assets/img/ent_hotham-5_948x948_crop_center.jpg");
+  background-image: url("./assets/img/ent_hotham-5_948x948_crop_center.jpg");
 }
 
 .carrousel .cr2 {
   grid-area: cr2;
-  background-image: url("/assets/img/firepit_hotham_605X455_452017d7-5b80-4f46-8464-ed6c3076566a_605x455.jpg");
+  background-image: url("./assets/img/firepit_hotham_605X455_452017d7-5b80-4f46-8464-ed6c3076566a_605x455.jpg");
 }
 
 .carrousel .cr3 {
   grid-area: cr3;
-  background-image: url("/assets/img/Furn_Pergolas_HP_900x560.jpg");
+  background-image: url("./assets/img/Furn_Pergolas_HP_900x560.jpg");
 }
 
 .carrousel .grande .cr1 .cr1le,
