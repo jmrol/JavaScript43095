@@ -4,13 +4,30 @@
     flex-direction: row;
 	flex-wrap: wrap;
 	 align-items: center;
-	 justify-content: space-around;
-    height: auto;
+	 justify-content: center;
+    height: 200px;
 	background-color:var(--primary);
-	// font-family: var(--font-principal);
-	// font-weight: bold;
+		// font-weight: bold;
 	// font-size: var(--text-base);
 	// padding-left: 200px;
 	// padding-right: 200px;
 	// z-index: 980;
+}
+.footer-titulos{
+	font-family: var(--font-principal);
+	color: var(--general_background-color);
+	font-weight: bold;
+	font-size: var(--text-base);
+}
+
+.footer-text{
+	font-family: var(--font-tercera);
+	color: var(--general_background-color);
+	// font-weight: bold;
+	font-size: var(--text-base);
+}
+
+.footer-comlunas{
+	margin-right: 30px;
+	margin-left: 30px;
 }

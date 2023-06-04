@@ -1,9 +1,10 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carlito&display=swap");
 :root {
   /* Colors */
-  --primary: #333231;
+  --primary: #242322;
   --secondary: #FCFCFC;
   --tertiary: #3486D9;
   --atext-color: #302F4D;
@@ -18,6 +19,7 @@
   /* Font-family */
   --font-principal: "Ubuntu", sans-serif;
   --font-secundaria: "Source Sans Pro", sans-serif;
+  --font-tercera:"Carlito", sans-serif;
   /* Font-weigth */
   /* Font-Sizes */
   --text-xlarge: 5em;
@@ -296,7 +298,7 @@ ul {
 
 .mosaic .mosaic1 {
   grid-area: mosaic1;
-  background-image: url(/assets/img/flame_sculpture_560x900.jpg);
+  background-image: url(../assets/img/flame_sculpture_560x900.jpg);
 }
 
 .mosaic .mosaic2 {
@@ -306,37 +308,37 @@ ul {
 
 .mosaic .mosaic3 {
   grid-area: mosaic3;
-  background-image: url(./assets/img/Vert-Garden-HP_605x455.jpg);
+  background-image: url(../assets/img/Vert-Garden-HP_605x455.jpg);
 }
 
 .mosaic .mosaic4 {
   grid-area: mosaic4;
-  background-image: url(./assets/img/Entanglements_0009_1350x2026.jpg);
+  background-image: url(../assets/img/Entanglements_0009_1350x2026.jpg);
 }
 
 .mosaic .mosaic5 {
   grid-area: mosaic5;
-  background-image: url(./assets/img/dr-arora---toorak---the-murray---rust---led-strip-lighting---wall-art_384x577.jpg);
+  background-image: url(../assets/img/dr-arora---toorak---the-murray---rust---led-strip-lighting---wall-art_384x577.jpg);
 }
 
 .mosaic .mosaic6 {
   grid-area: mosaic6;
-  background-image: url(./assets/img/Wall_Decor_HP_908x1000.jpg);
+  background-image: url(../assets/img/Wall_Decor_HP_908x1000.jpg);
 }
 
 .mosaic .mosaic7 {
   grid-area: mosaic7;
-  background-image: url(./assets/img/Furn_Pergolas_HP_900x560.jpg);
+  background-image: url(../assets/img/Furn_Pergolas_HP_900x560.jpg);
 }
 
 .mosaic .mosaic8 {
   grid-area: mosaic8;
-  background-image: url(./assets/img/MG_0089_885x1200.jpg);
+  background-image: url(../assets/img/MG_0089_885x1200.jpg);
 }
 
 .mosaic .mosaic9 {
   grid-area: mosaic9;
-  background-image: url(./assets/img/Kuru_Gate_570x920.jpg);
+  background-image: url(../assets/img/Kuru_Gate_570x920.jpg);
 }
 
 .grilla__shop {
@@ -378,9 +380,10 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
-  height: 100%;
+  width: 380px;
+  height: 80%;
   padding: 10px;
+  background-color: rgb(255, 0, 183);
   background-color: none;
 }
 
@@ -389,7 +392,7 @@ ul {
   justify-content: center;
   margin: 10px;
   width: 100%;
-  height: 500px;
+  height: 400px;
   align-items: center;
   background-color: none;
   overflow: hidden;
@@ -405,9 +408,27 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  height: auto;
+  justify-content: center;
+  height: 200px;
   background-color: var(--primary);
+}
+
+.footer-titulos {
+  font-family: var(--font-principal);
+  color: var(--general_background-color);
+  font-weight: bold;
+  font-size: var(--text-base);
+}
+
+.footer-text {
+  font-family: var(--font-tercera);
+  color: var(--general_background-color);
+  font-size: var(--text-base);
+}
+
+.footer-comlunas {
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .grilla__carrito {
