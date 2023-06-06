@@ -1,4 +1,5 @@
 
+
 class ArrayObjeto {
     constructor(obj) {
         this.id = obj.id;
@@ -45,7 +46,8 @@ const mostrarCarrito = () => {
         let eliminar = document.createElement('span')
         eliminar.innerText = '❌'
         eliminar.className = 'delete-product'
-
+        eliminar.id = 'delete'
+       
         contenedorC.append(eliminar)
         eliminar.addEventListener('click', eliminarProducto)
     })
@@ -71,9 +73,18 @@ const eliminarProducto = () => {
 }
 mostrarCarrito()
 
+// Swal.fire('Any fool can use a computer')
+
+const alertaEliminar = document.querySelector('#delete')
+alertaEliminar.addEventListener('click', () => {
+
+    Swal.fire('Any fool can use a computer')
+    })
 
 
 
+
+    
 
 
 
