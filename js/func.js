@@ -1,7 +1,29 @@
+// //realizo la llamada fetch, cuyo URL va a ser la ruta de mi archivo json (ruta relativa)
+// fetch(".data.json")
+//   .then((res) => res.json())
+//   ///La respuesta de la API se convierte en formato JSON utilizando el método json() y se almacena en la variable data.
+//   .then((data) => {
+//     const productos = []
+//   productos = data;
+//   });
 
+let productos = []
+
+  fetch('/data.json')
+    .then(res => res.json())
+    .then(data => {
+        cargarProductos(data)
+    })
+
+
+
+
+
+localStorage.setItem('productosss', JSON.stringify(productos))
+
+const cargarProductos = (data) => {
 var carrito = []
-// const cantidadCarrito = document.getElementById('cantidadCarrito')
-
+productos = data;
 
 let contenedor = document.getElementById('card-productos')
 
@@ -30,34 +52,33 @@ productos.forEach((x) => {
     comprar.addEventListener('click', () => {
         const repeat = carrito.some((repeatProduct) => repeatProduct.id === x.id)
 
-        if (repeat) {
+              if (repeat) {
             carrito.map((prod) => {
                 if (prod.id === x.id) {
                     prod.cantidad++
                 }
             })
         } else {
-
-
             carrito.push({
                 id: x.id,
                 nombre: x.nombre,
                 precio: x.precio,
                 imag: x.imagen,
                 cantidad: x.cantidad,
-
-
             })
         }
-        localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
+
+
+       
+      localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
         Toastify({
-            text: "This is a toast",
-            duration: 3000,
+            text: "Producto agregado al carrito",
+            duration: 1000,
             // destination: "https://github.com/apvarun/toastify-js",
             // newWindow: true,
             // close: true,
-            // gravity: "top", // `top` or `bottom`
-            // position: "left", // `left`, `center` or `right`
+            gravity: "bottom", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
             // stopOnFocus: true, // Prevents dismissing of toast on hover
             // style: {
             //   background: "linear-gradient(to right, #00b09b, #96c93d)",
@@ -67,5 +88,4 @@ productos.forEach((x) => {
     })
 
 })
-
-
+}

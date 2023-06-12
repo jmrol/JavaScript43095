@@ -28,4 +28,4 @@ punto.forEach((cadaPunto, i) => {
 })
 
 
-    (condicion) ? 'hola' : 'adiós'
+    // (condicion) ? 'hola' : 'adiós'

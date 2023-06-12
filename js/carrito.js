@@ -1,5 +1,3 @@
-
-
 class ArrayObjeto {
     constructor(obj) {
         this.id = obj.id;
@@ -10,11 +8,11 @@ class ArrayObjeto {
     }
 }
 
-//////
+
 const almacenadosls = JSON.parse(localStorage.getItem("productosSelecionados"));
 let carritoLS = [];
 
-/////
+
 let contenedorC = document.getElementById('carro_compras')
 
 
@@ -24,7 +22,6 @@ for (const objeto of almacenadosls) {
 
 
 const mostrarCarrito = () => {
-
     carritoLS.forEach((x) => {
 
         let card = document.createElement('div')
@@ -51,13 +48,13 @@ const mostrarCarrito = () => {
         contenedorC.append(eliminar)
         eliminar.addEventListener('click', eliminarProducto)
     })
-    ////fin for
 
-    const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
+       const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
 
     const totalBuying = document.createElement('div')
     totalBuying.className = ''
     totalBuying.innerHTML = `<p> total a pagar: $${total} </p>`
+    totalBuying.id = 'total'
     contenedorC.append(totalBuying)
 }
 
@@ -73,40 +70,29 @@ const eliminarProducto = () => {
 }
 mostrarCarrito()
 
-// Swal.fire('Any fool can use a computer')
+
 
 const alertaEliminar = document.querySelector('#delete')
-alertaEliminar.addEventListener('click', () => {
-    let timerInterval
-    Swal.fire({
-      title: 'Auto close alert!',
-      html: 'I will close in <b></b> milliseconds.',
-      timer: 2000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading()
-        const b = Swal.getHtmlContainer().querySelector('b')
-        timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft()
-        }, 100)
-      },
-      willClose: () => {
-        clearInterval(timerInterval)
-      }
-    }).then((result) => {
-      /* Read more about handling dismissals below */
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log('I was closed by the timer')
-      }
-    })
+// Acceso condicional
+alertaEliminar?.addEventListener('click', () => {
+  Swal.fire({
+    icon: false,
+    title: 'El producto se elimino del carrito',
+    showConfirmButton: false,
+    toast: true,
+    // text: 'Something went wrong!',
+    // footer: '<a href="">Why do I have this issue?</a>'
+  })
     window.location.reload()
-    // Swal.fire('Any fool can use a computer')
     })
 
 
-
-    
-    
+    // Operador AND &&
+const totalCompra = document.querySelector('#total')
+const CarroVacio = () => {
+  totalCompra.innerHTML = `<p> El carro esta askjdhnfkjasrf</p>`
+}
+carritoLS.length == 0 && CarroVacio()
 
 
 
