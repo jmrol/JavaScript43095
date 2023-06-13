@@ -1,29 +1,17 @@
-// //realizo la llamada fetch, cuyo URL va a ser la ruta de mi archivo json (ruta relativa)
-// fetch(".data.json")
-//   .then((res) => res.json())
-//   ///La respuesta de la API se convierte en formato JSON utilizando el método json() y se almacena en la variable data.
-//   .then((data) => {
-//     const productos = []
-//   productos = data;
-//   });
 
 let productos = []
 
-  fetch('/data.json')
-    .then(res => res.json())
-    .then(data => {
+  fetch('./data.json')
+    .then((res) => res.json())
+    .then((data) => {
         cargarProductos(data)
     })
 
 
-
-
-
-localStorage.setItem('productosss', JSON.stringify(productos))
-
 const cargarProductos = (data) => {
+    productos = data;
 var carrito = []
-productos = data;
+
 
 let contenedor = document.getElementById('card-productos')
 
