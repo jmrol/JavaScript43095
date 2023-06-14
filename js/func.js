@@ -1,8 +1,22 @@
+// fetch('https://jsonplaceholder.typicode.com/posts')
+// .then(res => console.log(res))
+
+
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+.then(res => res.json())
+.then(data => console.log(data))
+
+
+
 
 let productos = []
 
-  fetch('./data.json')
-    .then((res) => res.json())
+  fetch('/data.json')
+  .then(res => res.json())
+    // .then(data => console.log(data))
+
+
     .then((data) => {
         cargarProductos(data)
     })
