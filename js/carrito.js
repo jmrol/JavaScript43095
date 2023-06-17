@@ -8,9 +8,10 @@ class ArrayObjeto {
     }
 }
 
+   
 
 const almacenadosls = JSON.parse(localStorage.getItem("productosSelecionados"));
-let carritoLS = [];
+let carritoLS = [] ;
 
 
 let contenedorC = document.getElementById('carro_compras')
