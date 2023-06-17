@@ -25,20 +25,52 @@ for (const objeto of almacenadosls) {
 const mostrarCarrito = () => {
     carritoLS.forEach((x) => {
 
-        let card = document.createElement('div')
-        card.innerHTML = `
-            <div class="cards-carrito" id= "card-carritol">
-            <div class="imagenes-carrito">
-            <img src="${x.imagen}" alt=""  id= "img-carrito-card" >
-            </div>
-        <div class="card-carrito-body" id= "card-carrito-body">
-        <p class="">Precio: $${x.precio}</p>
-        <p class="">${x.nombre}  </p>
-        <p class="">Cantidad ${x.cantidad} </p>
-        <p class="">Total ${x.cantidad * x.precio} </p>
-        </div>
-        </div> 
+
+  let card = document.createElement('tr')
+        card.innerHTML =
+         `
+        <td><img src="${x.imagen}" alt="" width="48"></td>
+        <td >${producto.nombre}</td>
+        <td ><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
+        <td ><b>$${(x.cantidad * x.precio).toFixed(2)}</b></td>
+        <td ><img src="images/trash3.svg" alt="Eliminar Producto" title="Eliminar Producto" width="24" onclick="eliminarProducto(${producto.id});"></td>
+        </tr>
         `
+
+
+
+
+ 
+
+        // let card = document.createElement('div')
+        // card.innerHTML =
+        //  `
+        //     <div class="cards-carrito" id= "card-carritol">
+        //     <div class="imagenes-carrito">
+        //     <img src="${x.imagen}" alt=""  id= "img-carrito-card" >
+        //     </div>
+        // <div class="card-carrito-body" id= "card-carrito-body">
+        // <p class="">Precio: $${x.precio}</p>
+        // <p class="">${x.nombre}  </p>
+        // <p class="">Cantidad ${x.cantidad} </p>
+        // <p class="">Total ${x.cantidad * x.precio} </p>
+        // </div>
+        // </div> 
+        // `
+      
+        // `<tr >
+        // <td><img src="${x.imagen}" alt="" width="48"></td>
+        // <td class="align-middle">${producto.nombre}</td>
+        // <td class="align-middle text-end"><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
+        // <td class="align-middle text-end"><b>$${(x.cantidad * x.precio).toFixed(2)}</b></td>
+        // <td class="align-middle text-end"><img src="images/trash3.svg" alt="Eliminar Producto" title="Eliminar Producto" width="24" onclick="eliminarProducto(${producto.id});"></td>
+        // </tr>`;
+
+
+
+
+
+
         contenedorC.append(card)
 
         let eliminar = document.createElement('span')
