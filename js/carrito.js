@@ -78,7 +78,7 @@ const alertaEliminar = document.querySelector('#delete')
 alertaEliminar?.addEventListener('click', () => {
   Swal.fire({
     icon: false,
-    title: 'El producto se elimino del carrito',
+    title: 'El producto se elimino  carrito',
     showConfirmButton: false,
     toast: true,
     // text: 'Something went wrong!',
