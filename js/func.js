@@ -76,7 +76,7 @@ productos.forEach((x) => {
         Toastify({
             text: "Producto agregado al carrito",
             duration: 1000,
-            // destination: "https://github.com/apvarun/toastify-js",
+            destination: "https://github.com/apvarun/toastify-js",
             // newWindow: true,
             // close: true,
             gravity: "bottom", // `top` or `bottom`
@@ -91,3 +91,12 @@ productos.forEach((x) => {
 
 })
 }
+
+
+function vaciarCarrito() {
+    localStorage.removeItem("carritoLS");
+        mostrarCarrito()
+}
+
+
+

@@ -8,86 +8,51 @@ class ArrayObjeto {
     }
 }
 
-   
-
 const almacenadosls = JSON.parse(localStorage.getItem("productosSelecionados"));
 let carritoLS = [] ;
 
-
 let contenedorC = document.getElementById('carro_compras')
-
 
 for (const objeto of almacenadosls) {
     carritoLS.push(new ArrayObjeto(objeto));
 }
 
-
 const mostrarCarrito = () => {
     carritoLS.forEach((x) => {
-
 
   let card = document.createElement('tr')
         card.innerHTML =
          `
         <td><img src="${x.imagen}" alt="" width="48"></td>
-        <td >${producto.nombre}</td>
+        <td >${x.nombre}</td>
         <td ><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
         <td ><b>$${(x.cantidad * x.precio).toFixed(2)}</b></td>
-        <td ><img src="images/trash3.svg" alt="Eliminar Producto" title="Eliminar Producto" width="24" onclick="eliminarProducto(${producto.id});"></td>
         </tr>
         `
-
-
-
-
- 
-
-        // let card = document.createElement('div')
-        // card.innerHTML =
-        //  `
-        //     <div class="cards-carrito" id= "card-carritol">
-        //     <div class="imagenes-carrito">
-        //     <img src="${x.imagen}" alt=""  id= "img-carrito-card" >
-        //     </div>
-        // <div class="card-carrito-body" id= "card-carrito-body">
-        // <p class="">Precio: $${x.precio}</p>
-        // <p class="">${x.nombre}  </p>
-        // <p class="">Cantidad ${x.cantidad} </p>
-        // <p class="">Total ${x.cantidad * x.precio} </p>
-        // </div>
-        // </div> 
-        // `
-      
-        // `<tr >
-        // <td><img src="${x.imagen}" alt="" width="48"></td>
-        // <td class="align-middle">${producto.nombre}</td>
-        // <td class="align-middle text-end"><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
-        // <td class="align-middle text-end"><b>$${(x.cantidad * x.precio).toFixed(2)}</b></td>
-        // <td class="align-middle text-end"><img src="images/trash3.svg" alt="Eliminar Producto" title="Eliminar Producto" width="24" onclick="eliminarProducto(${producto.id});"></td>
-        // </tr>`;
-
-
-
-
-
-
         contenedorC.append(card)
 
-        let eliminar = document.createElement('span')
+        let eliminar = document.createElement('td')
         eliminar.innerText = '❌'
         eliminar.className = 'delete-product'
         eliminar.id = 'delete'
        
-        contenedorC.append(eliminar)
+        card.append(eliminar)
         eliminar.addEventListener('click', eliminarProducto)
     })
 
-       const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
+     const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
 
     const totalBuying = document.createElement('div')
     totalBuying.className = ''
-    totalBuying.innerHTML = `<p> total a pagar: $${total} </p>`
+
+    if (carritoLS.length == 0 ) {
+        totalBuying.innerHTML = `<p> El carro esta askjdhnfkjasrf</p>`
+        } else {
+            totalBuying.innerHTML = `<p> total a pagar: $${total} </p>`
+        }
+
     totalBuying.id = 'total'
+
     contenedorC.append(totalBuying)
 }
 
@@ -100,37 +65,17 @@ const eliminarProducto = () => {
     contenedorC.innerHTML = ''
     mostrarCarrito()
     console.log(carritoLS)
+
+    Swal.fire({
+        icon: false,
+        title: 'El producto se elimino  carrito',
+        showConfirmButton: false,
+        toast: true,
+        timer: 300,
+      })
+
 }
+
 mostrarCarrito()
-
-
-
-const alertaEliminar = document.querySelector('#delete')
-// Acceso condicional
-alertaEliminar?.addEventListener('click', () => {
-  Swal.fire({
-    icon: false,
-    title: 'El producto se elimino  carrito',
-    showConfirmButton: false,
-    toast: true,
-    // text: 'Something went wrong!',
-    // footer: '<a href="">Why do I have this issue?</a>'
-  })
-    window.location.reload()
-    })
-
-
-    // Operador AND &&
-const totalCompra = document.querySelector('#total')
-const CarroVacio = () => {
-  totalCompra.innerHTML = `<p> El carro esta askjdhnfkjasrf</p>`
-}
-carritoLS.length == 0 && CarroVacio()
-
-
-
-
-
-
 
 
