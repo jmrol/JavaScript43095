@@ -1,35 +1,21 @@
-// fetch('https://jsonplaceholder.typicode.com/posts')
-// .then(res => console.log(res))
-
-
-
-fetch('https://jsonplaceholder.typicode.com/posts')
-.then(res => res.json())
-.then(data => console.log(data))
-
-
-
-
 let productos = []
 
   fetch('/data.json')
   .then(res => res.json())
     // .then(data => console.log(data))
 
-
     .then((data) => {
         cargarProductos(data)
     })
 
-
-const cargarProductos = (data) => {
-    productos = data;
-var carrito = []
-
-
-let contenedor = document.getElementById('card-productos')
-
-productos.forEach((x) => {
+    cargarProductos = (data) => {
+        productos = data;
+    var carrito = []
+    
+    
+    let contenedor = document.getElementById('card-productos')
+    
+    productos.forEach((x) => {
     let card = document.createElement('div')
     card.innerHTML = `
         <div class="cards-prod">
@@ -69,33 +55,10 @@ productos.forEach((x) => {
                 cantidad: x.cantidad,
             })
         }
-
-
        
       localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
-        Toastify({
-            text: "Producto agregado al carrito",
-            duration: 1000,
-            destination: "https://github.com/apvarun/toastify-js",
-            // newWindow: true,
-            // close: true,
-            gravity: "bottom", // `top` or `bottom`
-            position: "left", // `left`, `center` or `right`
-            // stopOnFocus: true, // Prevents dismissing of toast on hover
-            // style: {
-            //   background: "linear-gradient(to right, #00b09b, #96c93d)",
-            // },
-            // onClick: function(){} // Callback after click
-          }).showToast();
-    })
-
+      alertaProductoAgregado()
+     })
 })
 }
-
-
-
-
-
-
-
 

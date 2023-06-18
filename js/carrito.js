@@ -1,4 +1,4 @@
- 
+
 class ArrayObjeto {
     constructor(obj) {
         this.id = obj.id;
@@ -9,10 +9,10 @@ class ArrayObjeto {
     }
 }
 
-const almacenadosls = JSON.parse(localStorage.getItem("productosSelecionados"));
-let carritoLS = [] ;
 
+let almacenadosls = cargarProductosLS()
 
+let carritoLS = [];
 
 let contenedorC = document.getElementById('carro_compras')
 
@@ -20,28 +20,22 @@ for (const objeto of almacenadosls) {
     carritoLS.push(new ArrayObjeto(objeto));
 }
 
-const mostrarCarrito = () => {
-
+mostrarCarrito = () => {
 
     const vaciarCarro = document.createElement('div')
     vaciarCarro.className = ''
-    
+
     vaciarCarro.innerHTML = `<span id="Vaciar">Vaciar Carrito  ❌</span>`
     vaciarCarro.id = 'Vaciar'
-    
+
     contenedorC.append(vaciarCarro)
-    
-
     vaciarCarro.addEventListener('click', vaciarTodo)
-
-
-
 
     carritoLS.forEach((x) => {
 
-  let card = document.createElement('tr')
+        let card = document.createElement('tr')
         card.innerHTML =
-         `
+            `
         <td><img src="${x.imagen}" alt="" width="48"></td>
         <td >${x.nombre}</td>
         <td ><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
@@ -54,51 +48,43 @@ const mostrarCarrito = () => {
         eliminar.innerText = '❌'
         eliminar.className = 'delete-product'
         eliminar.id = 'delete'
-       
+
         card.append(eliminar)
         eliminar.addEventListener('click', eliminarProducto)
-        
+
     })
 
 
-
-     const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
+    const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
 
     const totalBuying = document.createElement('div')
     totalBuying.className = ''
 
-
-    if (carritoLS.length == 0 ) {
+    if (carritoLS.length == 0) {
         totalBuying.innerHTML = `<p> El carro esta askjdhnfkjasrf</p>`
-        } else {
-            totalBuying.innerHTML = `<p> total a pagar: $${total} </p>`
-        }
+    } else {
+        totalBuying.innerHTML = `<p> total a pagar: $${total} </p>`
+    }
 
     totalBuying.id = 'total'
-
     contenedorC.append(totalBuying)
 
-
-
-
-
-
     const cantidadCarrito = document.getElementById('cantidadCarrito')
-          
+
     const cantProd = carritoLS.reduce((acc, el) => acc + el.cantidad, 0)
-    console.log(cantProd )
-       
-    const carritoCounter = () =>{
-    cantidadCarrito.style.display ='block'
-    cantidadCarrito.innerText = cantProd 
+    console.log(cantProd)
+
+    const carritoCounter = () => {
+        cantidadCarrito.style.display = 'block'
+        cantidadCarrito.innerText = cantProd
     }
 
     carritoCounter()
 }
 
-     
 
-const eliminarProducto = () => {
+
+eliminarProducto = () => {
     const foundID = carritoLS.find((element) => element.id)
     carritoLS = carritoLS.filter((carritoId) => {
         return carritoId !== foundID
@@ -108,33 +94,9 @@ const eliminarProducto = () => {
     mostrarCarrito()
     console.log(carritoLS)
 
-    Swal.fire({
-        icon: false,
-        title: 'El producto se elimino  carrito',
-        showConfirmButton: false,
-        toast: true,
-        timer: 300,
-      })
+    alertaProductoEliminado()
 }
-
-
-const vaciarTodo = () => {
-    localStorage.removeItem("carritoLS");
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 mostrarCarrito()
 
 
- 
