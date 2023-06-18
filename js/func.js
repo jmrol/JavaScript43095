@@ -93,10 +93,9 @@ productos.forEach((x) => {
 }
 
 
-function vaciarCarrito() {
-    localStorage.removeItem("carritoLS");
-        mostrarCarrito()
-}
+
+
+
 
 
 

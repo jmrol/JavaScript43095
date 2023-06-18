@@ -1,3 +1,4 @@
+ 
 class ArrayObjeto {
     constructor(obj) {
         this.id = obj.id;
@@ -11,6 +12,8 @@ class ArrayObjeto {
 const almacenadosls = JSON.parse(localStorage.getItem("productosSelecionados"));
 let carritoLS = [] ;
 
+
+
 let contenedorC = document.getElementById('carro_compras')
 
 for (const objeto of almacenadosls) {
@@ -18,6 +21,22 @@ for (const objeto of almacenadosls) {
 }
 
 const mostrarCarrito = () => {
+
+
+    const vaciarCarro = document.createElement('div')
+    vaciarCarro.className = ''
+    
+    vaciarCarro.innerHTML = `<span id="Vaciar">Vaciar Carrito  ❌</span>`
+    vaciarCarro.id = 'Vaciar'
+    
+    contenedorC.append(vaciarCarro)
+    
+
+    vaciarCarro.addEventListener('click', vaciarTodo)
+
+
+
+
     carritoLS.forEach((x) => {
 
   let card = document.createElement('tr')
@@ -38,12 +57,16 @@ const mostrarCarrito = () => {
        
         card.append(eliminar)
         eliminar.addEventListener('click', eliminarProducto)
+        
     })
+
+
 
      const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
 
     const totalBuying = document.createElement('div')
     totalBuying.className = ''
+
 
     if (carritoLS.length == 0 ) {
         totalBuying.innerHTML = `<p> El carro esta askjdhnfkjasrf</p>`
@@ -54,7 +77,26 @@ const mostrarCarrito = () => {
     totalBuying.id = 'total'
 
     contenedorC.append(totalBuying)
+
+
+
+
+
+
+    const cantidadCarrito = document.getElementById('cantidadCarrito')
+          
+    const cantProd = carritoLS.reduce((acc, el) => acc + el.cantidad, 0)
+    console.log(cantProd )
+       
+    const carritoCounter = () =>{
+    cantidadCarrito.style.display ='block'
+    cantidadCarrito.innerText = cantProd 
+    }
+
+    carritoCounter()
 }
+
+     
 
 const eliminarProducto = () => {
     const foundID = carritoLS.find((element) => element.id)
@@ -73,9 +115,26 @@ const eliminarProducto = () => {
         toast: true,
         timer: 300,
       })
-
 }
+
+
+const vaciarTodo = () => {
+    localStorage.removeItem("carritoLS");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 mostrarCarrito()
 
 
+ 
