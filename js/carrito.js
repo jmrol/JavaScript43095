@@ -9,7 +9,6 @@ class ArrayObjeto {
     }
 }
 
-
 let almacenadosls = cargarProductosLS()
 
 let carritoLS = [];
@@ -69,17 +68,17 @@ mostrarCarrito = () => {
     totalBuying.id = 'total'
     contenedorC.append(totalBuying)
 
-    const cantidadCarrito = document.getElementById('cantidadCarrito')
+    // const cantidadCarrito = document.getElementById('cantidadCarrito')
 
-    const cantProd = carritoLS.reduce((acc, el) => acc + el.cantidad, 0)
-    console.log(cantProd)
+    // const cantProd = carritoLS.reduce((acc, el) => acc + el.cantidad, 0)
+    
 
-    const carritoCounter = () => {
-        cantidadCarrito.style.display = 'block'
-        cantidadCarrito.innerText = cantProd
-    }
+    // const carritoCounter = () => {
+    //     cantidadCarrito.style.display = 'block'
+    //     cantidadCarrito.innerText = cantProd
+    // }
 
-    carritoCounter()
+    contadorCarrito()
 }
 
 

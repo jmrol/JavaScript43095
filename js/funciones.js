@@ -17,7 +17,6 @@ alertaProductoEliminado= () => {
         toast: true,
         timer: 300,
       })
-
 }
 
 
@@ -27,20 +26,37 @@ vaciarTodo = () => {
 
 
 contadorCarrito = () => {
+
   
-}
 const cantidadCarrito = document.getElementById('cantidadCarrito')
-          
+        
 const cantProd = carritoLS.reduce((acc, el) => acc + el.cantidad, 0)
 console.log(cantProd )
-carritoCounter = () =>{
+
     cantidadCarrito.style.display ='block'
     cantidadCarrito.innerText = cantProd 
-    }
+
 }
 
-    cargarProductosLS = () =>{
-        return  JSON.parse(localStorage.getItem("productosSelecionados"));
-    }
+
+// const cantidadCarrito = document.getElementById('cantidadCarrito')
+
+// const cantProd = carritoLS.reduce((acc, el) => acc + el.cantidad, 0)
+
+
+// const carritoCounter = () => {
+//     cantidadCarrito.style.display = 'block'
+//     cantidadCarrito.innerText = cantProd
+// }
+
+
+
+
+
+
+cargarProductosLS = () =>{
+return  JSON.parse(localStorage.getItem("productosSelecionados"));
+contadorCarrito()
+}
 
 

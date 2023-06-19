@@ -7,11 +7,11 @@ let productos = []
     .then((data) => {
         cargarProductos(data)
     })
-
+   
     cargarProductos = (data) => {
         productos = data;
     var carrito = []
-    
+   
     
     let contenedor = document.getElementById('card-productos')
     
