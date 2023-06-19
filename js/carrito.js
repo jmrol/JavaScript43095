@@ -24,7 +24,7 @@ mostrarCarrito = () => {
     let vaciarCarro = document.createElement('div')
     vaciarCarro.className = ''
 
-    vaciarCarro.innerHTML = `<span id="Vaciar">Vaciar Carrito  ❌</span>`
+    vaciarCarro.innerHTML = `<button id="Vaciar">Vaciar Carrito  ❌</button>`
     vaciarCarro.id = 'Vaciar'
 
     contenedorC.append(vaciarCarro)
@@ -67,7 +67,6 @@ mostrarCarrito = () => {
 
     totalBuying.id = 'total'
     contenedorC.append(totalBuying)
-
 
     contadorCarrito(carritoLS)
 }

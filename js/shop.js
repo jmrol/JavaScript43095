@@ -1,3 +1,4 @@
+
 let productos = []
 
   fetch('/data.json')
@@ -5,13 +6,17 @@ let productos = []
 
     .then((data) => {
         cargarProductos(data)
+    
     })
+ 
+  
    
+
     
     cargarProductos = (data) => {
-        productos = data;
+      
     var carrito = []
-   
+    productos = data;
     
     let contenedor = document.getElementById('card-productos')
     
@@ -69,3 +74,30 @@ let productos = []
 
 }
 
+function filtrarProductos(data) {
+    let product = data;
+    let textoBusqueda = document.getElementById("textoBusqueda").value;
+    let contenido = "";
+
+    product = textoBusqueda ? product.filter(item => item.nombre.toUpperCase().includes(textoBusqueda.toUpperCase())) : product;
+
+    if (product.length > 0) {
+        product.forEach(x => {
+            contenido += `<div class="col-md-3 mb-5">
+            <a href="ver-producto.html" onclick="verProducto(${x.id})" class="text-decoration-none">
+                <div class="card text-center border border-0">
+                    <img src="${x.imagen}" class="card-img-top" alt="${x.nombre}">
+                    <div class="card-body">
+                        <p class="card-text text-primary"><b>$${x.precio}</b></p>
+                        <p class="text-secondary">${x.nombre}</p>
+                    </div>
+                </div>
+            </a>
+            </div>`;
+        });
+    } else {
+        contenido += `<div class="alert alert-danger text-center" role="alert">No se encontraron productos por el término de búsqueda!</div>`;
+    }
+    
+    document.getElementById("card-productos").innerHTML = contenido;
+}
