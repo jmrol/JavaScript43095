@@ -99,6 +99,9 @@
 	top: 0;
 }
 
+
+
+
 .user {
 	grid-area: user;
 	display: flex;
@@ -119,4 +122,8 @@
 
 .logo {
 	grid-area: logo;
+}
+
+.busqueda {
+	grid-area: busqueda;
 }

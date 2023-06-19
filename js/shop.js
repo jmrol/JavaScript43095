@@ -2,12 +2,12 @@ let productos = []
 
   fetch('/data.json')
   .then(res => res.json())
-    // .then(data => console.log(data))
 
     .then((data) => {
         cargarProductos(data)
     })
    
+    
     cargarProductos = (data) => {
         productos = data;
     var carrito = []
@@ -57,8 +57,15 @@ let productos = []
         }
        
       localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
+
+
+
       alertaProductoAgregado()
+      contadorCarrito(carrito)
+
      })
+
 })
+
 }
 

@@ -21,14 +21,14 @@ for (const objeto of almacenadosls) {
 
 mostrarCarrito = () => {
 
-    const vaciarCarro = document.createElement('div')
+    let vaciarCarro = document.createElement('div')
     vaciarCarro.className = ''
 
     vaciarCarro.innerHTML = `<span id="Vaciar">Vaciar Carrito  ❌</span>`
     vaciarCarro.id = 'Vaciar'
 
     contenedorC.append(vaciarCarro)
-    vaciarCarro.addEventListener('click', vaciarTodo)
+    vaciarCarro.addEventListener('click',vaciarCarrito)
 
     carritoLS.forEach((x) => {
 
@@ -68,17 +68,8 @@ mostrarCarrito = () => {
     totalBuying.id = 'total'
     contenedorC.append(totalBuying)
 
-    // const cantidadCarrito = document.getElementById('cantidadCarrito')
 
-    // const cantProd = carritoLS.reduce((acc, el) => acc + el.cantidad, 0)
-    
-
-    // const carritoCounter = () => {
-    //     cantidadCarrito.style.display = 'block'
-    //     cantidadCarrito.innerText = cantProd
-    // }
-
-    contadorCarrito()
+    contadorCarrito(carritoLS)
 }
 
 
@@ -91,11 +82,16 @@ eliminarProducto = () => {
     localStorage.setItem('productosSelecionados', JSON.stringify(carritoLS))
     contenedorC.innerHTML = ''
     mostrarCarrito()
-    console.log(carritoLS)
-
     alertaProductoEliminado()
 }
 
+vaciarCarrito = () => {
+    localStorage.setItem("productosSelecionados",[]);
+    location. reload()
+}
+
+
 mostrarCarrito()
+
 
 

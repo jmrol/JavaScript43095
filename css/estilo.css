@@ -171,6 +171,10 @@ ul {
   grid-area: logo;
 }
 
+.busqueda {
+  grid-area: busqueda;
+}
+
 /*pagina home*/
 .grilla__home {
   display: grid;
