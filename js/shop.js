@@ -1,6 +1,7 @@
 
 var productos = []
 
+
   fetch('/data.json')
   .then(res => res.json())
 
@@ -9,7 +10,10 @@ var productos = []
         
     })
  
-
+    .catch(error => {
+        console.error('Error:', error);
+      });
+    
 
 
     
@@ -75,78 +79,78 @@ var productos = []
 }
 
 
-fetch('/data.json')
-.then(res => res.json())
-
-  .then((data) => {
-    filtrarProductos(data)
-
-  })
 
 
-function filtrarProductos(data) {
 
-    let product = data;
+
+
+  function filtrarProductos() {
+
+    
+
+    fetch('/data.json')
+    .then(res => res.json())
+  
+      .then((data) => {
+          filtro(data)
+          
+      })
+   
+      .catch(error => {
+          console.error('Error:', error);
+        });
+
+
+    function filtro(data) {
+console.log('sdfgsadfxxxxxxxxxxx')
+    let productos = data;
     let textoBusqueda = document.getElementById("textoBusqueda").value;
     let contenido = "";
-    console.log (data)
-    product = textoBusqueda ? product.filter(item => item.nombre.toUpperCase().includes(textoBusqueda.toUpperCase())) : product;
 
-    if (product.length > 0) {
-        product.forEach(x => {
-            let card = document.createElement('div')
-            card.innerHTML = `
-                <div class="cards-prod">
-                <div class="contenedor-imagen">
-                <img src="${x.imagen}" alt=""  id= "img-prod-card" >
-                </div>
-            <div class="card-body" id= "card-b">
-            <p class="">Precio: $${x.precio}</p>
-            <p class="">${x.nombre}</p>
-        
+    productos = textoBusqueda ? productos.filter(item => item.nombre.toUpperCase().includes(textoBusqueda.toUpperCase())) : productos;
+
+    if (productos.length > 0) {
+        productos.forEach(x => {
+            contenido += `
+            <div href="ver-producto.html" onclick="verProducto(${x.id})">
+            <div class="cards-prod">
+            <div class="contenedor-imagen">
+            <img src="${x.imagen}" alt=""  id= "img-prod-card" >
             </div>
-            </div>
-            `
-            contenedor.append(card)
-        
-            let comprar = document.createElement('button')
-            comprar.id = 'prodAgregado'
-            comprar.className = 'prodAgregado'
-            comprar.innerText = 'Comprar'
-            card.appendChild(comprar)
-        
-            comprar.addEventListener('click', () => {
-                const repeat = carrito.some((repeatProduct) => repeatProduct.id === x.id)
-        
-                      if (repeat) {
-                    carrito.map((prod) => {
-                        if (prod.id === x.id) {
-                            prod.cantidad++
-                        }
-                    })
-                } else {
-                    carrito.push({
-                        id: x.id,
-                        nombre: x.nombre,
-                        precio: x.precio,
-                        imag: x.imagen,
-                        cantidad: x.cantidad,
-                    })
-                }
-               
-              localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
-        
-        
-        
-              alertaProductoAgregado()
-              contadorCarrito(carrito)
-        
-             })
-        
+        <div class="card-body" id= "card-b">
+        <p class="">Precio: $${x.precio}</p>
+        <p class="">${x.nombre}</p>
+    
+        </div>
+        </div>
+        </div>
+        `
+
+
+
+
+
+
+
+
+        // `
+        //     <div class="col-md-3 mb-5">
+        //     <a href="ver-producto.html" onclick="verProducto(${producto.id})" class="text-decoration-none">
+        //         <div class="card text-center border border-0">
+        //             <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        //             <div class="card-body">
+        //                 <p class="card-text text-primary"><b>$${producto.precio}</b></p>
+        //                 <p class="text-secondary">${producto.nombre}</p>
+        //             </div>
+        //         </div>
+        //     </a>
+        //     </div>
+        //     `;
         });
     } else {
         contenido += `<div class="alert alert-danger text-center" role="alert">No se encontraron productos por el término de búsqueda!</div>`;
     }
     
     document.getElementById("card-productos").innerHTML = contenido;
+}
 }

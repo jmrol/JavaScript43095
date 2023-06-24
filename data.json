@@ -57,7 +57,7 @@
 
 {
   "id": 8,
-  "nombre": "foggon",
+  "nombre": "doggon",
   "precio": 100,
   "imagen": "../assets/img/01000_731x487.webp",
   "cantidad": 1
@@ -71,3 +71,5 @@
   "cantidad": 1
 }
 ]
+
+
