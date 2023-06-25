@@ -102,7 +102,6 @@ var productos = []
 
 
     function filtro(data) {
-console.log('sdfgsadfxxxxxxxxxxx')
     let productos = data;
     let textoBusqueda = document.getElementById("textoBusqueda").value;
     let contenido = "";
@@ -125,27 +124,6 @@ console.log('sdfgsadfxxxxxxxxxxx')
         </div>
         </div>
         `
-
-
-
-
-
-
-
-
-        // `
-        //     <div class="col-md-3 mb-5">
-        //     <a href="ver-producto.html" onclick="verProducto(${producto.id})" class="text-decoration-none">
-        //         <div class="card text-center border border-0">
-        //             <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-        //             <div class="card-body">
-        //                 <p class="card-text text-primary"><b>$${producto.precio}</b></p>
-        //                 <p class="text-secondary">${producto.nombre}</p>
-        //             </div>
-        //         </div>
-        //     </a>
-        //     </div>
-        //     `;
         });
     } else {
         contenido += `<div class="alert alert-danger text-center" role="alert">No se encontraron productos por el término de búsqueda!</div>`;

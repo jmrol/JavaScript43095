@@ -141,9 +141,6 @@ ul {
   grid-template-areas: ". logo user";
   width: 100%;
   background-color: var(--general_background-color);
-  font-family: var(--font-principal);
-  font-weight: bold;
-  font-size: var(--text-base);
   position: sticky;
   top: 0;
 }
@@ -155,9 +152,6 @@ ul {
   align-items: center;
   justify-content: center;
   background-color: var(--general_background-color);
-  font-family: var(--font-principal);
-  font-weight: bold;
-  font-size: var(--text-base);
   padding-right: 50px;
 }
 
@@ -234,7 +228,9 @@ ul {
   width: 100%;
   height: 600px;
   background-size: cover;
-  color: aqua;
+  font-family: var(--font-tercera);
+  color: var(--general_background-color);
+  font-size: var(--text-base);
 }
 
 .carrousel .cr1 {
@@ -255,7 +251,7 @@ ul {
 .carrousel .grande .cr1 .cr1le,
 .cr2le,
 .cr3le {
-  background-color: rgb(63, 62, 61);
+  background-color: var(--primary);
   width: 30%;
   height: 100%;
   display: flex;
@@ -378,6 +374,22 @@ ul {
 
 .cantidad-carrito {
   display: none;
+}
+
+.btn-busqueda {
+  font-family: var(--font-principal);
+  color: var(--primary);
+  font-size: var(--text-base);
+  background-color: var(--general_background-color);
+}
+
+.control-formulario {
+  font-family: var(--font-principal);
+  color: var(--primary);
+  font-size: var(--text-base);
+  background-color: var(--general_background-color);
+  border-color: gainsboro;
+  border-width: 1px;
 }
 
 .cards {

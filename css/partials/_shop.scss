@@ -16,3 +16,19 @@
 .cantidad-carrito{
 	display: none;
 }
+
+.btn-busqueda{
+	font-family: var(--font-principal);
+	color: var(--primary);
+	font-size: var(--text-base); 
+       background-color:var(--general_background-color);
+}
+
+.control-formulario{
+	font-family: var(--font-principal);
+	color: var(--primary);
+	font-size: var(--text-base); 
+       background-color:var(--general_background-color);
+	   border-color: gainsboro;
+	   border-width: 1px;
+}
