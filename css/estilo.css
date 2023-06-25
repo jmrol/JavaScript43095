@@ -56,14 +56,14 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   background-color: blue;
   font-family: var(--font-principal);
   font-weight: bold;
   font-size: var(--text-base);
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: auto;
+  padding-right: auto;
   z-index: 980;
 }
 
@@ -131,8 +131,8 @@ ul {
   color: var(--secondary);
   text-decoration-style: none;
   text-decoration-line: none;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cabecera2 {
@@ -144,8 +144,6 @@ ul {
   font-family: var(--font-principal);
   font-weight: bold;
   font-size: var(--text-base);
-  margin-right: 160px;
-  padding-left: 250px;
   position: sticky;
   top: 0;
 }
@@ -179,9 +177,8 @@ ul {
 .grilla__home {
   display: grid;
   grid-template-areas: "cabecera cabecera cabecera" "menusticky menusticky menusticky" "carrousel carrousel carrousel" "mosaic mosaic mosaic" "footer footer footer";
-  grid-template-rows: 50px 110px 600px 1200px 300px;
+  grid-template-rows: 50px 110px 600px auto auto;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 100vh;
   row-gap: 10px;
   -moz-column-gap: 10px;
        column-gap: 10px;
@@ -290,7 +287,7 @@ ul {
 .mosaic7,
 .mosaic8,
 .mosaic9 {
-  background-color: darkgreen;
+  background-color: var(--general_background-color);
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -298,51 +295,74 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+}
+
+.mosaic1 img,
+.mosaic2 img,
+.mosaic3 img,
+.mosaic4 img,
+.mosaic5 img,
+.mosaic6 img,
+.mosaic7 img,
+.mosaic8 img,
+.mosaic9 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mosaic1 p,
+.mosaic2 p,
+.mosaic3 p,
+.mosaic4 p,
+.mosaic5 p,
+.mosaic6 p,
+.mosaic7 p,
+.mosaic8 p,
+.mosaic9 p {
+  font-family: var(--font-principal);
+  color: var(--primary);
+  margin-top: 10px;
+  font-size: var(--text-base);
+  background-color: var(--general_background-color);
 }
 
 .mosaic .mosaic1 {
   grid-area: mosaic1;
-  background-image: url(../assets/img/flame_sculpture_560x900.jpg);
 }
 
 .mosaic .mosaic2 {
   grid-area: mosaic2;
-  background-image: url(../assets/img/firepit_hotham_605X455_452017d7-5b80-4f46-8464-ed6c3076566a_605x455.jpg);
 }
 
 .mosaic .mosaic3 {
   grid-area: mosaic3;
-  background-image: url(../assets/img/Vert-Garden-HP_605x455.jpg);
 }
 
 .mosaic .mosaic4 {
   grid-area: mosaic4;
-  background-image: url(../assets/img/Entanglements_0009_1350x2026.jpg);
 }
 
 .mosaic .mosaic5 {
   grid-area: mosaic5;
-  background-image: url(../assets/img/dr-arora---toorak---the-murray---rust---led-strip-lighting---wall-art_384x577.jpg);
 }
 
 .mosaic .mosaic6 {
   grid-area: mosaic6;
-  background-image: url(../assets/img/Wall_Decor_HP_908x1000.jpg);
 }
 
 .mosaic .mosaic7 {
   grid-area: mosaic7;
-  background-image: url(../assets/img/Furn_Pergolas_HP_900x560.jpg);
 }
 
 .mosaic .mosaic8 {
   grid-area: mosaic8;
-  background-image: url(../assets/img/MG_0089_885x1200.jpg);
 }
 
 .mosaic .mosaic9 {
   grid-area: mosaic9;
-  background-image: url(../assets/img/Kuru_Gate_570x920.jpg);
 }
 
 .grilla__shop {
@@ -414,8 +434,11 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  height: auto;
   background-color: var(--primary);
+  margin-top: 15px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .footer-titulos {

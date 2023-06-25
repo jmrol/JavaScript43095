@@ -12,6 +12,7 @@
 	row-gap: 10px;
 	column-gap: 10px;
 }
+
 .carroCompras{
 	grid-area: carro;
     display: flex;
@@ -30,7 +31,6 @@
 }
 
 
-
 .cards-carrito{
 	grid-area: cards;
     display: flex;
@@ -47,6 +47,7 @@
 	// padding-right: 200px;
 	// z-index: 980;
 }
+
 .card-carrito-body {
 display: flex;
 flex-direction: row;

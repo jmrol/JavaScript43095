@@ -9,9 +9,10 @@
 		"mosaic mosaic mosaic"
 		"footer footer footer"
 	;
-	grid-template-rows: 50px  110px 600px 1200px 300px;
+	grid-template-rows: 50px  110px 600px auto auto;
 	grid-template-columns: 1fr 1fr 1fr;
-	height: 100vh;
+
+	// height: 100vh;
 	row-gap: 10px;
 	column-gap: 10px;
 }
