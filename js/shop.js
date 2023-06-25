@@ -1,7 +1,6 @@
 
 var productos = []
 
-
   fetch('/data.json')
   .then(res => res.json())
 
@@ -15,10 +14,7 @@ var productos = []
       });
     
 
-
-    
     cargarProductos = (data) => {
-      
     var carrito = []
     productos = data;
     // console.log (data)
@@ -68,33 +64,21 @@ var productos = []
       localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
 
 
-
       alertaProductoAgregado()
       contadorCarrito(carrito)
 
      })
-
 })
-
 }
 
-
-
-
-
-
-
   function filtrarProductos() {
-
     
-
     fetch('/data.json')
     .then(res => res.json())
   
       .then((data) => {
           filtro(data)
-          
-      })
+                })
    
       .catch(error => {
           console.error('Error:', error);

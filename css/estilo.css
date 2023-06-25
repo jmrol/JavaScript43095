@@ -386,7 +386,16 @@ ul {
 .control-formulario {
   font-family: var(--font-principal);
   color: var(--primary);
-  font-size: var(--text-base);
+  font-size: var(text-small);
+  background-color: var(--general_background-color);
+  border-color: gainsboro;
+  border-width: 1px;
+}
+
+.prodAgregado {
+  font-family: var(--font-principal);
+  color: var(--primary);
+  font-size: var(text-small);
   background-color: var(--general_background-color);
   border-color: gainsboro;
   border-width: 1px;
