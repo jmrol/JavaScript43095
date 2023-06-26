@@ -110,7 +110,7 @@ var productos = []
         `
         });
     } else {
-        contenido += `<div class="alert alert-danger text-center" role="alert">No se encontraron productos por el término de búsqueda!</div>`;
+        contenido += `<div class="no-encontrado" role="alert">No se encontraron productos en su búsqueda!</div>`;
     }
     
     document.getElementById("card-productos").innerHTML = contenido;

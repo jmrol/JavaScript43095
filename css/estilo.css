@@ -269,7 +269,7 @@ ul {
   grid-template-areas: "mosaic1 mosaic1 mosaic1 mosaic1 mosaic2 mosaic2 mosaic2 mosaic2 mosaic4 mosaic4 mosaic4 mosaic4" "mosaic1 mosaic1 mosaic1 mosaic1 mosaic3 mosaic3 mosaic3 mosaic3 mosaic4 mosaic4 mosaic4 mosaic4" "mosaic5 mosaic5 mosaic5 mosaic5 mosaic5 mosaic5 mosaic6 mosaic6 mosaic6 mosaic6 mosaic6 mosaic6" "mosaic7 mosaic7 mosaic7 mosaic7 mosaic7 mosaic7 mosaic8 mosaic8 mosaic8 mosaic9 mosaic9 mosaic9";
   grid-template-rows: 400px 400px 1000px 800px;
   grid-template-columns: repeat(12, 1fr);
-  row-gap: 20px;
+  row-gap: 30px;
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
@@ -401,6 +401,13 @@ ul {
   border-width: 1px;
 }
 
+.no-encontrado {
+  font-family: var(--font-principal);
+  color: var(--primary);
+  font-size: var(--text-medium);
+  background-color: var(--general_background-color);
+}
+
 .cards {
   grid-area: cards;
   display: flex;
@@ -498,7 +505,6 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(0, 136, 255);
 }
 
 .cards-carrito {
