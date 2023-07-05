@@ -372,10 +372,6 @@ ul {
        column-gap: 10px;
 }
 
-.cantidad-carrito {
-  display: none;
-}
-
 .btn-busqueda {
   font-family: var(--font-principal);
   color: var(--primary);
@@ -556,4 +552,7 @@ ul {
 
 .cantidad-carrito {
   display: none;
+  font-family: var(--font-principal);
+  color: blue;
+  font-size: var(--text-base);
 }/*# sourceMappingURL=estilo.css.map */
