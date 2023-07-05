@@ -35,7 +35,7 @@ mostrarCarrito = () => {
         let card = document.createElement('tr')
         card.innerHTML =
             `
-        <td><img src="${x.imagen}" alt="" width="48"></td>
+        <td><img src="${x.imagen}" alt="" width="100"></td>
         <td >${x.nombre}</td>
         <td ><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
         <td ><b>$${(x.cantidad * x.precio).toFixed(2)}</b></td>
