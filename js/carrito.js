@@ -72,17 +72,42 @@ mostrarCarrito = () => {
 }
 
 
-
 eliminarProducto = () => {
-    const foundID = carritoLS.find((element) => element.id)
-    carritoLS = carritoLS.filter((carritoId) => {
-        return carritoId !== foundID
-    })
-    localStorage.setItem('productosSelecionados', JSON.stringify(carritoLS))
-    contenedorC.innerHTML = ''
-    mostrarCarrito()
-    alertaProductoEliminado()
-}
+    const foundID = carritoLS.find((element) => element.id);
+    const foundIndex = carritoLS.findIndex((element) => element.id === foundID.id);
+
+    if (foundIndex !== -1) {
+        if (carritoLS[foundIndex].cantidad > 1) {
+            carritoLS[foundIndex].cantidad -= 1;
+            localStorage.setItem('productosSelecionados', JSON.stringify(carritoLS));
+            contenedorC.innerHTML = '';
+            mostrarCarrito();
+            alertaProductoEliminado();
+        } else {
+            carritoLS = carritoLS.filter((carritoId) => carritoId !== foundID);
+            localStorage.setItem('productosSelecionados', JSON.stringify(carritoLS));
+            contenedorC.innerHTML = '';
+            mostrarCarrito();
+            alertaProductoEliminado();
+        }
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 vaciarCarrito = () => {
     localStorage.setItem("productosSelecionados",[]);

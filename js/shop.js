@@ -62,8 +62,6 @@ var productos = []
         }
        
       localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
-
-
       alertaProductoAgregado()
       contadorCarrito(carrito)
 
