@@ -42,15 +42,41 @@ var productos = []
     comprar.innerText = 'Comprar'
     card.appendChild(comprar)
 
-    comprar.addEventListener('click', () => {
-        const repeat = carrito.some((repeatProduct) => repeatProduct.id === x.id)
+    // comprar.addEventListener('click', () => {
+    //     const repeat = carrito.some((repeatProduct) => repeatProduct.id === x.id)
 
-              if (repeat) {
+    //           if (repeat) {
+    //         carrito.map((prod) => {
+    //             if (prod.id === x.id) {
+    //                 prod.cantidad++
+    //             }
+    //         })
+    //     } else {
+    //         carrito.push({
+    //             id: x.id,
+    //             nombre: x.nombre,
+    //             precio: x.precio,
+    //             imag: x.imagen,
+    //             cantidad: x.cantidad,
+    //         })
+    //     }
+    //     // si local storage no existe se setea y si existe no se hace nada
+       
+    //   localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
+    //   alertaProductoAgregado()
+    //   contadorCarrito(carrito)
+
+    //  })
+
+     comprar.addEventListener('click', () => {
+        const repeat = carrito.some((repeatProduct) => repeatProduct.id === x.id);
+    
+        if (repeat) {
             carrito.map((prod) => {
                 if (prod.id === x.id) {
-                    prod.cantidad++
+                    prod.cantidad++;
                 }
-            })
+            });
         } else {
             carrito.push({
                 id: x.id,
@@ -58,14 +84,40 @@ var productos = []
                 precio: x.precio,
                 imag: x.imagen,
                 cantidad: x.cantidad,
-            })
+            });
         }
-       
-      localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
-      alertaProductoAgregado()
-      contadorCarrito(carrito)
+    
+        let carritoExistente = localStorage.getItem('productosSelecionados');
+    
+        if (carritoExistente) {
+            carritoExistente = JSON.parse(carritoExistente);
+            carrito.forEach((productoNuevo) => {
+                const productoExistente = carritoExistente.find((prod) => prod.id === productoNuevo.id);
+                if (productoExistente) {
+                    productoExistente.cantidad += productoNuevo.cantidad;
+                } else {
+                    carritoExistente.push(productoNuevo);
+                }
+            });
+        } else {
+            carritoExistente = carrito;
+        }
+    
+        localStorage.setItem('productosSelecionados', JSON.stringify(carritoExistente));
+        alertaProductoAgregado();
+        contadorCarrito(carritoExistente);
+    });
 
-     })
+
+
+
+
+
+
+
+
+
+
 })
 }
 
@@ -81,7 +133,6 @@ var productos = []
       .catch(error => {
           console.error('Error:', error);
         });
-
 
     function filtro(data) {
     let productos = data;

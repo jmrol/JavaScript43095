@@ -72,6 +72,7 @@ mostrarCarrito = () => {
 }
 
 
+
 eliminarProducto = () => {
     const foundID = carritoLS.find((element) => element.id);
     const foundIndex = carritoLS.findIndex((element) => element.id === foundID.id);
@@ -92,18 +93,6 @@ eliminarProducto = () => {
         }
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
