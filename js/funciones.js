@@ -14,7 +14,7 @@ alertaProductoEliminado= () => {
         title: 'El producto se elimino  carrito',
         showConfirmButton: false,
         toast: true,
-        timer: 300,
+        timer: 400,
       })
 }
 
