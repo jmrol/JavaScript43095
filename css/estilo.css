@@ -58,7 +58,7 @@ ul {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: blue;
+  background-color: rgb(196, 164, 118);
   font-family: var(--font-principal);
   font-weight: bold;
   font-size: var(--text-base);
@@ -479,8 +479,8 @@ ul {
 }
 
 .footer-comlunas {
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .grilla__carrito {
