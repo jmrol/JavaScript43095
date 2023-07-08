@@ -8,7 +8,6 @@ Toastify({
    }).showToast();
 }
 
-
 alertaProductoEliminado= () => {
     Swal.fire({
         icon: false,
@@ -19,15 +18,11 @@ alertaProductoEliminado= () => {
       })
 }
 
-
 cargarProductosLS = () =>{
     return  JSON.parse(localStorage.getItem("productosSelecionados"));
     
     }
     
-
-
-
 contadorCarrito = (arry) => {
  const cantidadCarrito = document.getElementById('cantidadCarrito')   
 const cantProd = arry.reduce((acc, el) => acc + el.cantidad, 0)
