@@ -24,7 +24,8 @@ mostrarCarrito = () => {
     let vaciarCarro = document.createElement('div')
     vaciarCarro.className = ''
 
-    vaciarCarro.innerHTML = `<button id="Vaciar">Vaciar Carrito  ❌</button>`
+    vaciarCarro.innerHTML = `<button id="Vaciar" class="Vaciar-carrito">Vaciar Carrito  ❌</button>`
+    
     vaciarCarro.id = 'Vaciar'
 
     contenedorC.append(vaciarCarro)
@@ -35,10 +36,10 @@ mostrarCarrito = () => {
         let card = document.createElement('tr')
         card.innerHTML =
             `
-        <td><img src="${x.imagen}" alt="" width="100"></td>
-        <td >${x.nombre}</td>
-        <td ><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
-        <td ><b>$${(x.cantidad * x.precio).toFixed(2)}</b></td>
+        <td><img src="${x.imagen}" alt="" width="200"></td>
+        <td class="carrito-text">${x.nombre}</td>
+        <td class="carrito-text" ><b>${x.cantidad} X $${x.precio.toFixed(2)}</b></td>
+        <td class="carrito-text"><b>$${(x.cantidad * x.precio).toFixed(2)}</b></td>
         </tr>
         `
         contenedorC.append(card)
@@ -60,9 +61,10 @@ mostrarCarrito = () => {
     totalBuying.className = ''
 
     if (carritoLS.length == 0) {
-        totalBuying.innerHTML = `<p> El carro esta askjdhnfkjasrf</p>`
+        totalBuying.innerHTML = `<p class="carrito-text"> El carro esta vacio</p>`
     } else {
-        totalBuying.innerHTML = `<p> total a pagar: $${total} </p>`
+        totalBuying.innerHTML = `<br>
+        <p class="carrito-text"> Total a pagar: $${total} </p>`
     }
 
     totalBuying.id = 'total'

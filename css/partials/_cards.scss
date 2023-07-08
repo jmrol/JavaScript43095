@@ -5,12 +5,7 @@
 	flex-wrap: wrap;
 	 align-items: center;
 	 justify-content: space-around;
-	// width: 80%;
-	// background-color: rgb(0, 255, 157);
 	background-color:none;
-	// font-family: var(--font-principal);
-	// font-weight: bold;
-	// font-size: var(--text-base);
 	padding-left: 200px;
 	padding-right: 200px;
 	// z-index: 980;
@@ -26,10 +21,6 @@ text-align: left;
 padding-right: 200px;
 
 }
-
-// .card-body .p {
-
-// 	}
 
 .cards-prod {
 	display: flex;
@@ -56,13 +47,5 @@ overflow: hidden;
 }
 
 #img-prod-card{
-	// margin-left: 30px;
-	// margin-right: 30px;
-	// margin-top: 10px;
-	// margin-bottom: 10px;
-	// height: auto;
 	width: 500px;
-	// padding-top:200px;
-// display: block;
-// object-fit: cover;
 }
