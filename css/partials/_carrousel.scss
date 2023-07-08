@@ -34,11 +34,11 @@
     width: 2em;
     height: 2em;
     margin: 1em 1em 0;
-    background-color: rgb(235, 137, 10)
+    background-color:rgb(4, 22, 28);
 }
 
 .carrousel .punto.activo {
-    background-color: rgb(4, 22, 28);
+    background-color: whitesmoke
 }
 
 .carrousel .cr1,
@@ -75,7 +75,7 @@
 .cr2le,
 .cr3le {
     background-color:var(--primary);
-    width: 30%;
+    width: 35%;
     height: 100%;
     display: flex;
     flex-direction: column;
