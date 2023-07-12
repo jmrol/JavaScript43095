@@ -1,7 +1,7 @@
 
 var productos = []
 
-  fetch('/data.json')
+  fetch('../data.json')
   .then(res => res.json())
 
     .then((data) => {
@@ -42,32 +42,7 @@ var productos = []
     comprar.innerText = 'Comprar'
     card.appendChild(comprar)
 
-    // comprar.addEventListener('click', () => {
-    //     const repeat = carrito.some((repeatProduct) => repeatProduct.id === x.id)
-
-    //           if (repeat) {
-    //         carrito.map((prod) => {
-    //             if (prod.id === x.id) {
-    //                 prod.cantidad++
-    //             }
-    //         })
-    //     } else {
-    //         carrito.push({
-    //             id: x.id,
-    //             nombre: x.nombre,
-    //             precio: x.precio,
-    //             imag: x.imagen,
-    //             cantidad: x.cantidad,
-    //         })
-    //     }
-    //     // si local storage no existe se setea y si existe no se hace nada
-       
-    //   localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
-    //   alertaProductoAgregado()
-    //   contadorCarrito(carrito)
-
-    //  })
-
+   
      comprar.addEventListener('click', () => {
         const repeat = carrito.some((repeatProduct) => repeatProduct.id === x.id);
     
