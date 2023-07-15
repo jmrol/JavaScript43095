@@ -19,7 +19,7 @@ for (const objeto of almacenadosls) {
     carritoLS.push(new ArrayObjeto(objeto));
 }
 
-mostrarCarrito = () => {
+const mostrarCarrito = () => {
 
     let vaciarCarro = document.createElement('div')
     vaciarCarro.className = ''
@@ -64,7 +64,7 @@ mostrarCarrito = () => {
     contadorCarrito(carritoLS)
 }
 
-eliminarProducto = () => {
+const eliminarProducto = () => {
     const foundID = carritoLS.find((element) => element.id);
     const foundIndex = carritoLS.findIndex((element) => element.id === foundID.id);
 
@@ -85,7 +85,7 @@ eliminarProducto = () => {
     }
 };
 
-vaciarCarrito = () => {
+const vaciarCarrito = () => {
     localStorage.setItem("productosSelecionados", []);
     location.reload()
 }

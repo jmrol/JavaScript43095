@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,60 +8,62 @@
     <title>Shop</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
-    
+
 </head>
 
-    <body class="grilla__shop">
-        <header class="cabecera">
-            <!--menu negro sup-->
-    
-            <a class="cabecera_linkss" href="pages/contacto.html">CONTACTANOS</a>
-            <a class="cabecera_linkss" href="pages/serviciopersonalizado.html">SERVICIO PERSONALIZADO</a>
-            <a class="cabecera_linkss" href="wattsahp">2494948756</a>
-    
-        </header>
-        <!--menu intermedio  con logo Y CARRITO-->
-        <div class="menusticky">
-            <div class="cabecera2">
-                <div class="logo">
-                  <a href="../index.html"><img src="../assets/img/logp laser.png" alt="Enlace home" height="62px"></a>
-                </div>        
-    
-                <div class="user">
-                    <a href="../index.html"><img src="../assets/img/account.png" alt="Logo usuario" width="22px" id="user-btn"></a>
-                    <a href="./carrito.html"><img src="../assets/img/cart.png" alt="Logo carrito" width="22px"  id="Carrito"><span id="cantidadCarrito" class="cantidad-carrito"></span></a>
-                    <input type="text" id="textoBusqueda" class="control-formulario" placeholder="Ingrese su busqueda">
-                    <span class="btn-busqueda" id="btnBusqueda" onclick="filtrarProductos()">Buscar</span>
+<body class="grilla__shop">
+    <header class="cabecera">
+        <!--menu negro sup-->
 
-                    
-                   
-                </div>
+        <a class="cabecera_linkss" href="pages/contacto.html">CONTACTANOS</a>
+        <a class="cabecera_linkss" href="pages/serviciopersonalizado.html">SERVICIO PERSONALIZADO</a>
+        <a class="cabecera_linkss" href="wattsahp">2494948756</a>
+
+    </header>
+    <!--menu intermedio  con logo Y CARRITO-->
+    <div class="menusticky">
+        <div class="cabecera2">
+            <div class="logo">
+                <a href="../index.html"><img src="../assets/img/logp laser.png" alt="Enlace home" height="62px"></a>
             </div>
-            <nav class="menus">
-                <ul>
-                    <li><a href="../index.html">HOME</a></li>
-                    <li><a href="./shop.html">SHOP METAL +</a>
-                        <!-- <ul>
+
+            <div class="user">
+                <a href="../index.html"><img src="../assets/img/account.png" alt="Logo usuario" width="22px"
+                        id="user-btn"></a>
+                <a href="./carrito.html"><img src="../assets/img/cart.png" alt="Logo carrito" width="22px"
+                        id="Carrito"><span id="cantidadCarrito" class="cantidad-carrito"></span></a>
+                <input type="text" id="textoBusqueda" class="control-formulario" placeholder="Ingrese su busqueda">
+                <span class="btn-busqueda" id="btnBusqueda" onclick="filtrarProductos()">Buscar</span>
+
+
+
+            </div>
+        </div>
+        <nav class="menus">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="./shop.html">SHOP METAL +</a>
+                    <!-- <ul>
                             <li><a href="./pages/servicios.html#diseñoIndustrial">Diseño Industrial</a></li>
                             <li><a href="./pages/servicios.html#prototipado">Prototipado</a></li>
                             <li><a href="./pages/servicios.html#desarroloConstructivo">Desarrolo Constructivo</a></li>
                         </ul> -->
-                    </li>
-                    <li><a href="pages/serviciopersonalizado.html">NOSOTROS</a></li>
-                    <li><a href="wattsahp">CONTACTO</a></li>
-                </ul>
-            </nav>
-        </div>
+                </li>
+                <li><a href="pages/serviciopersonalizado.html">NOSOTROS</a></li>
+                <li><a href="wattsahp">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </div>
 
-          <section class="cards" id="card-productos">
+    <section class="cards" id="card-productos">
     </section>
     <div class="footer" id="Footer">
-        </div>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script defer src="../js/productos.js"></script>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="../js/shop.js"></script>
     <script defer src="../js/funciones.js"></script>
- 
-       <script defer src="../js/footer.js"></script>
- </body>
+
+    <script defer src="../js/footer.js"></script>
+</body>
+
 </html>

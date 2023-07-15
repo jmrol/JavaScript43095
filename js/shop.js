@@ -11,7 +11,7 @@ fetch('../data.json')
         console.error('Error:', error);
     });
 
-cargarProductos = (data) => {
+    const cargarProductos = (data) => {
     let carrito = []
     productos = data;
     let contenedor = document.getElementById('card-productos')

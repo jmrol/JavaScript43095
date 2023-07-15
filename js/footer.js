@@ -1,8 +1,8 @@
 function cargarFooter() {
 
-let contenedorFooter = document.getElementById('Footer')
+  let contenedorFooter = document.getElementById('Footer')
 
-contenedorFooter .innerHTML = `
+  contenedorFooter.innerHTML = `
 <div>
     <ul class="footer-comlunas">
       <li class="footer-titulos">LASER LED</li>
@@ -37,5 +37,5 @@ contenedorFooter .innerHTML = `
   </ul>
 </div> 
 `
-} 
-        cargarFooter()
+}
+cargarFooter()
