@@ -1,19 +1,10 @@
 
 let productos = []
 
-fetch('../data.json')
-    .then(res => res.json())
-    .then((data) => {
-        cargarProductos(data)
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-
 const cargarProductos = (data) => {
     let carrito = []
 
-     const productosSeleccionadosLS = localStorage.getItem('productosSelecionados');
+    const productosSeleccionadosLS = localStorage.getItem('productosSelecionados');
     if (productosSeleccionadosLS) {
         carrito = JSON.parse(productosSeleccionadosLS);
     }
@@ -83,15 +74,16 @@ const cargarProductos = (data) => {
     })
 }
 
+fetch('../data.json')
+    .then(res => res.json())
+    .then((data) => {
+        cargarProductos(data)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
 function filtrarProductos() {
-    fetch('/data.json')
-        .then(res => res.json())
-        .then((data) => {
-            filtro(data)
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
 
     function filtro(data) {
         let productos = data;
@@ -123,4 +115,12 @@ function filtrarProductos() {
 
         document.getElementById("card-productos").innerHTML = contenido;
     }
+    fetch('/data.json')
+        .then(res => res.json())
+        .then((data) => {
+            filtro(data)
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
