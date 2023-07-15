@@ -26,12 +26,10 @@ cargarProductos = (data) => {
     <div class="card-body" id= "card-b">
     <p class="">Precio: $${x.precio}</p>
     <p class="">${x.nombre}</p>
-
     </div>
     </div>
     `
         contenedor.append(card)
-
         let comprar = document.createElement('button')
         comprar.id = 'prodAgregado'
         comprar.className = 'prodAgregado'
@@ -81,7 +79,6 @@ cargarProductos = (data) => {
 }
 
 function filtrarProductos() {
-
     fetch('/data.json')
         .then(res => res.json())
 
