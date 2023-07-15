@@ -25,14 +25,12 @@ mostrarCarrito = () => {
     vaciarCarro.className = ''
 
     vaciarCarro.innerHTML = `<button id="Vaciar" class="Vaciar-carrito">Vaciar Carrito  ❌</button>`
-    
+
     vaciarCarro.id = 'Vaciar'
 
     contenedorC.append(vaciarCarro)
-    vaciarCarro.addEventListener('click',vaciarCarrito)
-
+    vaciarCarro.addEventListener('click', vaciarCarrito)
     carritoLS.forEach((x) => {
-
         let card = document.createElement('tr')
         card.innerHTML =
             `
@@ -43,37 +41,28 @@ mostrarCarrito = () => {
         </tr>
         `
         contenedorC.append(card)
-
         let eliminar = document.createElement('td')
         eliminar.innerText = '❌'
         eliminar.className = 'delete-product'
         eliminar.id = 'delete'
-
         card.append(eliminar)
         eliminar.addEventListener('click', eliminarProducto)
-
     })
 
 
     const total = carritoLS.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
-
     const totalBuying = document.createElement('div')
     totalBuying.className = ''
-
     if (carritoLS.length == 0) {
         totalBuying.innerHTML = `<p class="carrito-text"> El carro esta vacio</p>`
     } else {
         totalBuying.innerHTML = `<br>
         <p class="carrito-text"> Total a pagar: $${total} </p>`
     }
-
     totalBuying.id = 'total'
     contenedorC.append(totalBuying)
-
     contadorCarrito(carritoLS)
 }
-
-
 
 eliminarProducto = () => {
     const foundID = carritoLS.find((element) => element.id);
@@ -96,15 +85,10 @@ eliminarProducto = () => {
     }
 };
 
-
-
-
-
 vaciarCarrito = () => {
-    localStorage.setItem("productosSelecionados",[]);
-    location. reload()
+    localStorage.setItem("productosSelecionados", []);
+    location.reload()
 }
-
 
 mostrarCarrito()
 
