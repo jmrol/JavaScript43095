@@ -61,6 +61,7 @@ const mostrarCarrito = () => {
     }
     totalBuying.id = 'total'
     contenedorC.append(totalBuying)
+    
     contadorCarrito(carritoLS)
 }
 

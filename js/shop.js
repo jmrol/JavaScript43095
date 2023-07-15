@@ -77,6 +77,7 @@ fetch('../data.json')
 
             localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
     let carritoExistente = localStorage.getItem('productosSelecionados');
+    console.log(carritoExistente)
             alertaProductoAgregado();
             contadorCarrito(carritoExistente);
         });
