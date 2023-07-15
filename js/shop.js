@@ -6,13 +6,18 @@ fetch('../data.json')
     .then((data) => {
         cargarProductos(data)
     })
-
     .catch(error => {
         console.error('Error:', error);
     });
 
-    const cargarProductos = (data) => {
+const cargarProductos = (data) => {
     let carrito = []
+
+     const productosSeleccionadosLS = localStorage.getItem('productosSelecionados');
+    if (productosSeleccionadosLS) {
+        carrito = JSON.parse(productosSeleccionadosLS);
+    }
+
     productos = data;
     let contenedor = document.getElementById('card-productos')
 
@@ -55,31 +60,25 @@ fetch('../data.json')
                 });
             }
 
-            // let carritoExistente = localStorage.getItem('productosSelecionados');
-
-            // if (carritoExistente) {
-            //     carritoExistente = JSON.parse(carritoExistente);
-            //     carrito.forEach((productoNuevo) => {
-            //         const productoExistente = carritoExistente.find((prod) => prod.id === productoNuevo.id);
-            //         if (productoExistente) {
-            //             productoExistente.cantidad += productoNuevo.cantidad;
-            //         } else {
-            //             carritoExistente.push(productoNuevo);
-            //         }
-            //     });
-            // } else {
-            //     carritoExistente = carrito;
-            // }
-
-            // localStorage.setItem('productosSelecionados', JSON.stringify(carritoExistente));
-
-         
+            class ArrayObjeto {
+                constructor(obj) {
+                    this.id = obj.id;
+                    this.nombre = obj.nombre;
+                    this.precio = obj.precio;
+                    this.imagen = obj.imag;
+                    this.cantidad = obj.cantidad
+                }
+            }
 
             localStorage.setItem('productosSelecionados', JSON.stringify(carrito))
-    let carritoExistente = localStorage.getItem('productosSelecionados');
-    console.log(carritoExistente)
+            let almacenadosls = cargarProductosLS()
+            let carritoLS = [];
+            for (const objeto of almacenadosls) {
+                carritoLS.push(new ArrayObjeto(objeto));
+            }
+
             alertaProductoAgregado();
-            contadorCarrito(carritoExistente);
+            contadorCarrito(carritoLS);
         });
     })
 }
@@ -87,11 +86,9 @@ fetch('../data.json')
 function filtrarProductos() {
     fetch('/data.json')
         .then(res => res.json())
-
         .then((data) => {
             filtro(data)
         })
-
         .catch(error => {
             console.error('Error:', error);
         });

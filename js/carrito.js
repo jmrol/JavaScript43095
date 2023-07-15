@@ -63,6 +63,7 @@ const mostrarCarrito = () => {
     contenedorC.append(totalBuying)
     
     contadorCarrito(carritoLS)
+    console.log(carritoLS)
 }
 
 const eliminarProducto = () => {
